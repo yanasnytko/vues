@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nb Alea{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Tableau de longueur {{ tableau|length }}</h1>
+        <h2>Partie une</h2>
+        <h3>Les paires</h3>
+        <ul>
+            {% for val in tableau %}
+                {% if val is even %}
+                    <li>{{ val }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <h3>Les impaires</h3>
+        <ul>
+            {% for val in tableau %}
+                {% if val is odd %}
+                    <li>{{ val }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {# <ul>
+            {% for val in tableau %}
+                {% if val is even %}
+                    <li>{{ val }}</li>
+                {% else %}
+                    <li>{{ val }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul> #}
+
+        <h2>Partie deux</h2>
+        <p>Le plus grand nombre dans le tableau est : {{ max(tableau) }}</p>
+    </div>
+{% endblock %}

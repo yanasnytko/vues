@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block javascript %}
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "Paragraph changed.";
+            }
+        </script>
+        {{ parent() }}
+    {% endblock %}
+
+{% block body %}
+    
+    {# <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Paragraph changed.";
+        }
+    </script> #}
+
+    <div class="example-wrapper">
+    
+        <h1>Hello {{ controller_name }}! ✅</h1>
+        <h2>Demo JavaScript in Body</h2>
+        <p id="demo">A Paragraph.</p>
+        <button type="button" onclick="myFunction()">Try it</button>
+    </div>
+{% endblock %}

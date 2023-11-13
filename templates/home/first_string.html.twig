@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}First String!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        {# Afficher les valeurs du tableau #}
+        <h1>Tableau : longueur {{ tableau|length }}</h1>
+
+        <h2>1ere valeur</h2>
+        <p>{{ tableau|first }}</p>
+
+        <h2>Toutes les valeurs</h2>
+        <ul>
+            {% for val in tableau %}
+                <li>{{ val|capitalize }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Valeur aléatoire de mon tableau</h2>
+        <p>
+            {{ random(tableau) }}
+        </p>
+    </div>
+
+{% endblock %}
