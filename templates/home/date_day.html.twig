@@ -5,13 +5,14 @@
 {% block body %}
     <div class="example-wrapper">
         <h1>Date Day</h1>
-        <p>Aujourd'hui : {{ today.format('Y-m-d H:i:s') }}</p>
+        {% set now = "now"|date("Y-m-d") %}
+        <p>Aujourd'hui : {{ now }}</p>
 
-        <p>Date spécifique : {{ specificDate.format('Y-m-d H:i:s') }}</p>
+        <p>Date spécifique : {{ specificDate|date("Y-m-d") }}</p>
 
-        {% if specificDate > today %}
+        {% if specificDate|date("Y-m-d") > now %}
             <p>La date est supérieure à aujourd'hui.</p>
-        {% elseif specificDate < today %}
+        {% elseif specificDate|date("Y-m-d") < now %}
             <p>La date est inférieure à aujourd'hui.</p>
         {% else %}
             <p>La date est aujourd'hui.</p>

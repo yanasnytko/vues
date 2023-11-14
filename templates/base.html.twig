@@ -49,6 +49,11 @@
                 </li>
             </ul>
         </nav>
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block scripts %}
+                <script src="{{ asset('js/vote.js') }}"></script>
+            {% endblock %}
+        {% endblock %}
+        
     </body>
 </html>

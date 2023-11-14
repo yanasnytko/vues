@@ -2,22 +2,15 @@
 
 {% block title %}Hello ArticleController!{% endblock %}
 
-{% block javascript %}
-        <script>
-            function myFunction() {
-                document.getElementById("demo").innerHTML = "Paragraph changed.";
-            }
-        </script>
-        {{ parent() }}
-    {% endblock %}
+
 
 {% block body %}
-    
-    {# <script>
+    {{ parent() }}
+    <script>
         function myFunction() {
             document.getElementById("demo").innerHTML = "Paragraph changed.";
         }
-    </script> #}
+    </script>
 
     <div class="example-wrapper">
     
@@ -26,4 +19,11 @@
         <p id="demo">A Paragraph.</p>
         <button type="button" onclick="myFunction()">Try it</button>
     </div>
+    {% block script %}
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "Paragraph changed.";
+            }
+        </script>
+    {% endblock %}
 {% endblock %}

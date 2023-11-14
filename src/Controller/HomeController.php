@@ -55,7 +55,7 @@ class HomeController extends AbstractController
     public function dateDay(): Response
     {
         $today = new DateTime();
-        $specificDate = new DateTime('2023-11-13');
+        $specificDate = date('2023-11-14');
 
         // Rendre la vue avec la date
         return $this->render('home/date_day.html.twig', [
